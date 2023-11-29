@@ -1,0 +1,54 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+header{
+    margin: 0 auto;
+    width: 100%;
+    .nav{
+        width: 80%;
+        padding-top: 2.5%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        &_logo{
+            color: #000;
+            font-family: 'Merriweather', serif;
+            font-size: 120%;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            font-weight: 900;
+            transition-duration: .3s;
+            &_a{
+                font-weight: 400;
+            }
+                &:hover{
+                color: cadetblue;
+                transition-duration: .3s;
+                cursor: pointer;
+                }
+        }
+        ul{
+            width: 60%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-flow:row wrap-reverse;
+            li{
+                padding: 4px 4px 4px 4px;
+                a{
+                    color:black;
+                }
+            }
+        }
+    }
+}
