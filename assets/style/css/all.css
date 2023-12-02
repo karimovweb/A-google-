@@ -12,6 +12,10 @@ a {
   text-decoration: none;
 }
 
+button {
+  cursor: pointer;
+}
+
 header {
   margin: 0 auto;
   width: 100%;
@@ -26,24 +30,21 @@ header .nav {
 }
 header .nav_logo {
   color: #000;
-  font-family: "Merriweather", serif;
-  font-size: 120%;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  font-weight: 900;
+  font-family: "Lexend Deca", serif;
+  font-size: 34px;
+  font-weight: bold;
   transition-duration: 0.3s;
 }
 header .nav_logo_a {
   font-weight: 400;
 }
 header .nav_logo:hover {
-  color: cadetblue;
+  color: #2639ED;
   transition-duration: 0.3s;
   cursor: pointer;
 }
 header .nav ul {
-  width: 60%;
+  width: 48%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -54,6 +55,13 @@ header .nav ul li {
 }
 header .nav ul li a {
   color: black;
+  font-size: 20px;
+  font-family: "Merriweather", serif;
+  font-weight: 500;
+}
+header .nav ul li a:hover {
+  color: #2639ED;
+  transition: 0.2s;
 }
 
 .container {
@@ -80,7 +88,7 @@ header .nav ul li a {
   font-family: "Merriweather", serif;
   font-size: 40px;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 600;
   line-height: normal;
   margin-bottom: 10%;
 }
@@ -90,12 +98,12 @@ header .nav ul li a {
   font-family: "Merriweather", serif;
   font-size: 16px;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 160%;
   margin-bottom: 10%;
 }
 .section_1 .right_block .btn {
-  width: 55%;
+  width: 35%;
   animation: none;
   border-radius: 60px;
   background: #2639ED;
@@ -108,8 +116,8 @@ header .nav ul li a {
 }
 .section_1 .right_block .btn-a {
   color: #FFF;
-  font-family: "Merriweather", serif;
-  font-size: 90%;
+  font-family: "Lexend Deca", sans-serif;
+  font-size: 20px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
@@ -125,4 +133,11 @@ header .nav ul li a {
   width: 45%;
   border-radius: 0px 0px 0px 200px;
   background: rgb(173, 119, 119) 50%/covrgb(255, 255, 255) ortant;
+}
+.section_1 .left_block .circle {
+  width: 129px;
+  height: 129px;
+  color: #DAE9FF;
+  position: absolute;
+  left: 0;
 }/*# sourceMappingURL=all.css.map */
