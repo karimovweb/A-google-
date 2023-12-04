@@ -9,6 +9,9 @@ li{
 a{
     text-decoration: none;
 }
+button{
+    cursor: pointer;
+}
 header{
     margin: 0 auto;
     width: 100%;
@@ -21,24 +24,21 @@ header{
         align-items: center;
         &_logo{
             color: #000;
-            font-family: 'Merriweather', serif;
-            font-size: 120%;
-            font-style: normal;
-            font-weight: 400;
-            line-height: normal;
-            font-weight: 900;
+            font-family: 'Lexend Deca', serif;
+            font-size: 34px;
+            font-weight: bold;
             transition-duration: .3s;
             &_a{
                 font-weight: 400;
             }
                 &:hover{
-                color: cadetblue;
+                color: #2639ED;
                 transition-duration: .3s;
                 cursor: pointer;
                 }
         }
         ul{
-            width: 60%;
+            width: 48%;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -47,6 +47,13 @@ header{
                 padding: 4px 4px 4px 4px;
                 a{
                     color:black;
+                    font-size: 20px;
+                    font-family: 'Merriweather', serif;
+                    font-weight: 500;
+                    &:hover{
+                        color: #2639ED;
+                        transition: .2s;
+                    }
                 }
             }
         }
@@ -61,6 +68,7 @@ header{
     display: flex;
     flex-direction: row;
     & .right_block{
+
         width: 38%;
         margin-top: 10%;
         display: flex;
@@ -72,6 +80,7 @@ header{
                 font-size: 40px;
                 font-style: normal;
                 font-weight: 700;
+                font-weight: 600;
                 line-height: normal;
                 margin-bottom: 10%;
             }        
@@ -81,12 +90,12 @@ header{
                 font-family: 'Merriweather', serif;
                 font-size: 75%;
                 font-style: normal;
-                font-weight: 400;
+                font-weight: 500;
                 line-height: 160%; 
                 margin-bottom: 10%;
             }
             & .btn{
-                width: 55%;
+                width: 35%;
                 animation: none;
                 border-radius: 60px;
                 background: #2639ED;
@@ -99,8 +108,8 @@ header{
                 }
                 &-a{
                     color: #FFF;
-                    font-family: 'Merriweather', serif;
-                    font-size: 90%;
+                    font-family: 'Lexend Deca', sans-serif;
+                    font-size: 20px;
                     font-style: normal;
                     font-weight: 400;
                     line-height: normal;
@@ -120,6 +129,13 @@ header{
                 border-radius: 0px 0px 0px 200px;
                 background: rgb(173, 119, 119) 50% / covrgb(255, 255, 255);
              }
+             & .circle{
+                width: 129px;
+                height: 129px;
+                color: #DAE9FF;
+                position: absolute;
+                left: 0;
+            }
          }
 }
 .section_2{
