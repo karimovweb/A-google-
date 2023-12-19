@@ -102,7 +102,7 @@ header .nav ul li a:hover {
   margin-bottom: 10%;
 }
 .section_1 .right_block .btn {
-  width: 35%;
+  width: 45%;
   animation: none;
   border-radius: 60px;
   background: #2639ED;
@@ -132,6 +132,13 @@ header .nav ul li a:hover {
   width: 36%;
   border-radius: 0px 0px 0px 200px;
   background: rgb(173, 119, 119) 50%/covrgb(255, 255, 255);
+}
+.section_1 .left_block .circle {
+  width: 129px;
+  height: 129px;
+  color: #DAE9FF;
+  position: absolute;
+  left: 0;
 }
 
 .section_2 {
@@ -173,12 +180,4 @@ header .nav ul li a:hover {
 }
 .section_2 .left_block img {
   width: 55%;
-  background: rgb(173, 119, 119) 50%/covrgb(255, 255, 255) ortant;
-}
-.section_1 .left_block .circle {
-  width: 129px;
-  height: 129px;
-  color: #DAE9FF;
-  position: absolute;
-  left: 0;
 }/*# sourceMappingURL=all.css.map */
