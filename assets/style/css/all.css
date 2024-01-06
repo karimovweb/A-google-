@@ -21,7 +21,7 @@ header {
   width: 100%;
 }
 header .nav {
-  width: 80%;
+  width: 90%;
   padding-top: 2.5%;
   margin: 0 auto;
   display: flex;
@@ -44,7 +44,7 @@ header .nav_logo:hover {
   cursor: pointer;
 }
 header .nav ul {
-  width: 48%;
+  width: 55%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -102,7 +102,11 @@ header .nav ul li a:hover {
   margin-bottom: 10%;
 }
 .section_1 .right_block .btn {
+<<<<<<< Updated upstream
   width: 45%;
+=======
+  width: 280px;
+>>>>>>> Stashed changes
   animation: none;
   border-radius: 60px;
   background: #2639ED;
@@ -111,16 +115,16 @@ header .nav ul li a:hover {
 }
 .section_1 .right_block .btn:hover {
   transition: 0.3s;
-  background-color: #3c48b3;
+  background-color: rgba(38, 58, 237, 0.6470588235);
 }
 .section_1 .right_block .btn-a {
   color: #FFF;
   font-family: "Lexend Deca", sans-serif;
-  font-size: 20px;
+  font-size: 16px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  letter-spacing: 1.3px;
+  letter-spacing: 1.5px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -179,5 +183,9 @@ header .nav ul li a:hover {
   flex-wrap: wrap;
 }
 .section_2 .left_block img {
+<<<<<<< Updated upstream
   width: 55%;
+=======
+  width: 110px;
+>>>>>>> Stashed changes
 }/*# sourceMappingURL=all.css.map */

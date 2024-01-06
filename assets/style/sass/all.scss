@@ -16,7 +16,7 @@ header{
     margin: 0 auto;
     width: 100%;
     .nav{
-        width: 80%;
+        width: 90%;
         padding-top: 2.5%;
         margin: 0 auto;
         display: flex;
@@ -38,7 +38,7 @@ header{
                 }
         }
         ul{
-            width: 48%;
+            width: 55%;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -95,7 +95,11 @@ header{
                 margin-bottom: 10%;
             }
             & .btn{
+<<<<<<< Updated upstream
                 width: 45%;
+=======
+                width: 280px;
+>>>>>>> Stashed changes
                 animation: none;
                 border-radius: 60px;
                 background: #2639ED;
@@ -103,17 +107,16 @@ header{
                 border: none;
                 &:hover{
                     transition: .3s;
-                    background-color: #3c48b3;
-
+                    background-color: #263aeda5;
                 }
                 &-a{
                     color: #FFF;
                     font-family: 'Lexend Deca', sans-serif;
-                    font-size: 20px;
+                    font-size: 16px;
                     font-style: normal;
                     font-weight: 400;
                     line-height: normal;
-                    letter-spacing: 1.3px;
+                    letter-spacing: 1.5px;
                     display: flex;
                     align-items: center;
                     justify-content: center;
@@ -170,13 +173,12 @@ header{
     & .left_block{
         width: 45%;
         display: flex;
-        align-items: center;
-        justify-content: space-between;
+        align-items: center;justify-content: space-between;
         flex-direction: row;
         flex-wrap: wrap;
         
         img{
-            width: 55%;
+            width: 110px;
         }
     }
 }
