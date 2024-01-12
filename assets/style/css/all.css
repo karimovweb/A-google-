@@ -19,6 +19,7 @@ button {
 header {
   margin: 0 auto;
   width: 100%;
+  margin-bottom: 50px;
 }
 header .nav {
   width: 90%;
@@ -62,6 +63,7 @@ header .nav ul li a {
 header .nav ul li a:hover {
   color: #2639ED;
   transition: 0.2s;
+  filter: drop-shadow(2px -1px 10px #2639ED);
 }
 
 .container {
@@ -70,13 +72,13 @@ header .nav ul li a:hover {
 }
 
 .section_1 {
-  margin-left: 15%;
+  width: 1670px;
   display: flex;
-  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 }
 .section_1 .right_block {
   width: 38%;
-  margin-top: 10%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -102,11 +104,8 @@ header .nav ul li a:hover {
   margin-bottom: 10%;
 }
 .section_1 .right_block .btn {
-<<<<<<< Updated upstream
-  width: 45%;
-=======
+  width: 25%;
   width: 280px;
->>>>>>> Stashed changes
   animation: none;
   border-radius: 60px;
   background: #2639ED;
@@ -130,11 +129,10 @@ header .nav ul li a:hover {
   justify-content: center;
 }
 .section_1 .left_block .image {
-  position: absolute;
-  right: 0;
-  margin-top: 4.5%;
-  width: 36%;
-  border-radius: 0px 0px 0px 200px;
+  width: 750px;
+  margin-top: 25px;
+  margin-left: 15%;
+  border-radius: 1px 1px 1px 200px;
   background: rgb(173, 119, 119) 50%/covrgb(255, 255, 255);
 }
 .section_1 .left_block .circle {
@@ -146,24 +144,22 @@ header .nav ul li a:hover {
 }
 
 .section_2 {
-  margin-left: 15%;
+  width: 1300px;
+  margin: 0 auto;
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
   position: relative;
   margin-top: 10%;
 }
 .section_2 .right_block {
   display: flex;
   flex-direction: column;
-  margin-right: 25%;
 }
 .section_2 .right_block .bold_tt {
   color: #000;
   font-family: "Merriweather", serif;
   font-size: 40px;
-  font-style: normal;
-  font-weight: 400;
   line-height: normal;
 }
 .section_2 .right_block .p_tt {
@@ -175,17 +171,50 @@ header .nav ul li a:hover {
   line-height: 160%;
 }
 .section_2 .left_block {
-  width: 45%;
+  width: 890px;
+  height: 200px;
+  padding-top: 65px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-direction: row;
   flex-wrap: wrap;
 }
+.section_2 .left_block div {
+  height: 180px;
+  margin-bottom: 15px;
+}
+.section_2 .left_block div:nth-child(3) {
+  padding-top: 15px;
+}
+.section_2 .left_block div:nth-child(4) {
+  padding-top: 15px;
+}
 .section_2 .left_block img {
-<<<<<<< Updated upstream
-  width: 55%;
-=======
-  width: 110px;
->>>>>>> Stashed changes
+  width: 180px;
+}
+
+.section_3 {
+  width: 1650px;
+  margin: 0 auto;
+  position: relative;
+}
+.section_3 .text {
+  margin-top: 420px;
+  margin-left: px;
+}
+.section_3 .text strong {
+  color: #000;
+  font-family: "Merriweather", serif;
+  font-size: 40px;
+  font-style: normal;
+  line-height: normal;
+}
+.section_3 .text p {
+  color: #565656;
+  font-family: "Merriweather", serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 160%; /* 25.6px */
 }/*# sourceMappingURL=all.css.map */

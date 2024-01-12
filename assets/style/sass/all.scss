@@ -15,6 +15,7 @@ button{
 header{
     margin: 0 auto;
     width: 100%;
+    margin-bottom: 50px;
     .nav{
         width: 90%;
         padding-top: 2.5%;
@@ -53,6 +54,7 @@ header{
                     &:hover{
                         color: #2639ED;
                         transition: .2s;
+                filter: drop-shadow(2px -1px 10px #2639ED);
                     }
                 }
             }
@@ -64,13 +66,12 @@ header{
     margin: 0 auto;
 }
 .section_1{ 
-    margin-left: 15%;
+    width: 1670px;
     display: flex;
-    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
     & .right_block{
-
         width: 38%;
-        margin-top: 10%;
         display: flex;
         flex-direction: column;
         justify-content: space-between; 
@@ -95,11 +96,8 @@ header{
                 margin-bottom: 10%;
             }
             & .btn{
-<<<<<<< Updated upstream
-                width: 45%;
-=======
+                width: 25%;
                 width: 280px;
->>>>>>> Stashed changes
                 animation: none;
                 border-radius: 60px;
                 background: #2639ED;
@@ -125,11 +123,10 @@ header{
     }
          & .left_block{
              & .image{
-                position: absolute;
-                right: 0;
-                margin-top: 4.5%;
-                width: 36%;
-                border-radius: 0px 0px 0px 200px;
+                width: 750px;
+                margin-top: 25px;
+                margin-left: 15%;
+                border-radius: 1px 1px 1px 200px;
                 background: rgb(173, 119, 119) 50% / covrgb(255, 255, 255);
              }
              & .circle{
@@ -142,22 +139,20 @@ header{
          }
 }
 .section_2{
-    margin-left: 15%;
+    width: 1300px;
+    margin: 0 auto;
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
     position: relative;
     margin-top: 10%;
     & .right_block{
         display: flex;
         flex-direction: column;
-        margin-right: 25%;
         & .bold_tt{
             color: #000;
             font-family: 'Merriweather', serif;
             font-size: 40px;
-            font-style: normal;
-            font-weight: 400;
             line-height: normal;
         }
         & .p_tt{
@@ -171,14 +166,53 @@ header{
         }
     }
     & .left_block{
-        width: 45%;
+        width: 890px;
+        height: 200px;
+        padding-top: 65px;
         display: flex;
-        align-items: center;justify-content: space-between;
+        align-items: center;
+        justify-content: space-between;
         flex-direction: row;
         flex-wrap: wrap;
+        div{
+            height: 180px;
+            margin-bottom: 15px;
+            &:nth-child(3){
+                padding-top: 15px;
+            }
+            &:nth-child(4){
+                padding-top: 15px;
+            }
+        }
         
         img{
-            width: 110px;
+            width: 180px;
+            filter: drop-shadow(12px -11px 5px red); today!!!
+        }
+    }
+}
+
+.section_3{
+    width: 1650px;
+    margin: 0 auto;
+    position: relative; 
+    .text{
+        margin-top: 420px;
+        margin-left: px;
+        strong{
+            color: #000;
+            font-family: 'Merriweather', serif ;
+            font-size: 40px;
+            font-style: normal;
+            line-height: normal;
+        }
+        p{
+            color: #565656;
+            font-family: 'Merriweather', serif ;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 160%; /* 25.6px */
         }
     }
 }
