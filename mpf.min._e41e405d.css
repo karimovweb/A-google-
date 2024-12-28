@@ -1,0 +1,296 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Payment Form</title>
+  <link href="/payment/assets/css/preloader.min._3a7f3682.css" integrity="sha384-On82gsYwrqMLee1my++L6AvGYGgonWDnxh/LsPiVJI5DE41pRCuw22JF3n4kL1n0" rel="stylesheet">
+  <link href="./css/mpf.min._e41e405d.css" integrity="sha384-5B5AXVa6sCt4V9y4DkQG6cJR5RBTdKWUwaCu2qtotHIXxhxy/mtyL7QUaOCws4ib" rel="stylesheet">
+</head>
+<body data-is-active-by-css="active_by_css">
+
+<!-- preloader -->
+<div class="intro" id="preloader">
+  <svg version="1.1" x="0" y="0" class="preloader" viewBox="0 0 100 100">
+    <circle class="circle" cx="50" cy="50" r="44"></circle>
+  </svg>
+</div>
+
+<main class="app">
+
+  <header class="app__header">
+    <div class="app__lang">
+      <input type="hidden" id="lang" data-default-lang="uz">
+      <div class="flex language-menu">
+        <div class="app__lang__item language-menu-item" data-lang="en">
+          <span class="text-blue-700">Eng</span>
+          <img src="./assets/en.svg" alt="">
+        </div>
+        <div class="app__lang__item language-menu-item" data-lang="ru">
+          <span class="text-blue-700">Rus</span>
+          <img src="./assets/ru.svg" alt="">
+        </div>
+        <div class="app__lang__item language-menu-item" data-lang="kz">
+          <span class="text-blue-700">Kaz</span>
+          <img src="./assets/kz.svg" alt="">
+        </div>
+        <div class="app__lang__item language-menu-item" data-lang="tr">
+          <span class="text-blue-700">Tur</span>
+          <img src="./assets/tr.svg" alt="">
+        </div>
+        <div class="app__lang__item language-menu-item" data-lang="az">
+          <span class="text-blue-700">AZE</span>
+          <img src="./assets/az.svg" alt="">
+        </div>
+        <div class="app__lang__item language-menu-item" data-lang="uz">
+          <span class="text-blue-700">UZB</span>
+          <img src="./assets/uz.svg" alt="">
+        </div>
+
+        <svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M8.55643 10.669C8.697 10.2682 9.07537 10 9.50006 10H14.5001C14.9247 10 15.3031 10.2682 15.4437 10.669C15.5843 11.0697 15.4564 11.5156 15.1248 11.7809L12.6248 13.7809C12.2595 14.073 11.7406 14.073 11.3754 13.7809L8.87536 11.7809C8.54374 11.5156 8.41585 11.0697 8.55643 10.669Z"
+                fill="currentColor"
+          />
+        </svg>
+      </div>
+      <div class="app__lang__dropdown position-absolute py-2 language-menu-toggle">
+        <div class="app__lang__item mb-2 language-menu-toggle-item" data-lang="en">
+          <span>Eng</span>
+          <img src="./assets/en.svg" alt="">
+        </div>
+        <div class="app__lang__item mb-2 language-menu-toggle-item" data-lang="ru">
+          <span>Rus</span>
+          <img src="./assets/ru.svg" alt="">
+        </div>
+        <div class="app__lang__item mb-2 language-menu-toggle-item" data-lang="kz">
+          <span>Kaz</span>
+          <img src="./assets/kz.svg" alt="">
+        </div>
+        <div class="app__lang__item mb-2 language-menu-toggle-item" data-lang="tr">
+          <span class="text-blue-700">Tur</span>
+          <img src="./assets/tr.svg" alt="">
+        </div>
+        <div class="app__lang__item mb-2 language-menu-toggle-item" data-lang="az">
+          <span class="text-blue-700">Aze</span>
+          <img src="./assets/az.svg" alt="">
+        </div>
+        <div class="app__lang__item mb-2 language-menu-toggle-item" data-lang="uz">
+          <span class="text-blue-700">Uzb</span>
+          <img src="./assets/uz.svg" alt="">
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div><form id="paymentform">
+    <input type="hidden" id="uid" name="uid">
+  <div class="app__title">
+    <h3 class="col-lg-6 col-12 mb-3 mb-lg-0 text-medium">
+      <div class="mb-2" data-translate="PAYMENT">
+      </div>
+      <div class="flex text-normal text-gray-700 text-sm cup">
+        <span data-translate="ORDER_NUMBER"></span><span id="number"></span>
+        <div class="tooltip">
+          <span class="tooltiptext" id="number_tooltip" data-translate="Copy to clipboard">Copy to clipboard</span>
+          <svg
+                  width="20" height="20" fill="none" xmlns="http://www.w3.org/2000/svg"
+                  data-copy-item-id="number"
+                  data-tooltip-item-id="number_tooltip"
+                  class="js-copy d-block mx-2">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M7.50016 1.66675C7.03993 1.66675 6.66683 2.03984 6.66683 2.50008V5.00008H4.16683C3.70659 5.00008 3.3335 5.37318 3.3335 5.83342V17.5001C3.3335 17.9603 3.70659 18.3334 4.16683 18.3334H12.5002C12.9604 18.3334 13.3335 17.9603 13.3335 17.5001V15.0001H15.8335C16.2937 15.0001 16.6668 14.627 16.6668 14.1667V2.50008C16.6668 2.03984 16.2937 1.66675 15.8335 1.66675H7.50016ZM13.3335 13.3334H15.0002V3.33341H8.3335V5.00008H12.5002C12.9604 5.00008 13.3335 5.37318 13.3335 5.83342V13.3334ZM5.00016 16.6667V6.66675H11.6668V16.6667H5.00016Z" fill="currentColor"/>
+          </svg>
+        </div>
+      </div>
+    </h3>
+    <h1 class="col-lg-auto col-12 text-medium">
+      <span id="amount"></span>&nbsp;<span id="amountcurr"></span>
+    </h1>
+  </div>
+  <article class="app__content">
+    <div class="app__content__title">
+      <div class="flex justify-content-between">
+        <h3 class="flex justify-content-between" data-translate="PAYMENT_BY_BANK_CARD">
+        </h3>
+        <div class="payment-systems col-12 col-md-auto mt-3 mt-md-0">
+          <div class="payment-system" data-paysys-logo="VISA">
+            <img src="./assets/visa.svg" alt="">
+          </div>
+          <div class="payment-system" data-paysys-logo="MASTERCARD">
+            <img src="./assets/master.svg" alt="">
+          </div>
+          <div class="payment-system" data-paysys-logo="AMEX">
+            <img src="./assets/amex.svg" alt="">
+          </div>
+          <div class="payment-system" data-paysys-logo="DINERS">
+            <img src="/payment/img/diners_2x.png" alt="">
+          </div>
+          <div class="payment-system" data-paysys-logo="DISCOVER">
+            <img src="/payment/img/discover_2x.png" alt="">
+          </div>
+          <div class="payment-system" data-paysys-logo="UNIONPAY">
+            <img src="/payment/img/unionpay_2x.png" alt="">
+          </div>
+          <div class="payment-system" data-paysys-logo="JCB">
+            <img src="./assets/jcb.svg" alt="">
+          </div>
+          <div class="payment-system" data-paysys-logo="MIR">
+            <img src="./assets/mir.svg" alt="">
+          </div>
+          <div class="payment-system" data-paysys-logo="ELCARD">
+            <img src="/payment/img/elcard.svg" alt="">
+          </div>
+          <div class="payment-system" data-paysys-logo="UZCARD">
+            <img src="/payment/img/uzcard.png" alt="">
+          </div>
+          <div class="payment-system" data-paysys-logo="HUMO">
+            <img src="/payment/img/humo.png" alt="">
+          </div>
+          <div class="payment-system" data-paysys-logo="TROY">
+            <img src="/payment/img/troy.png" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="app__content__body">
+      <div>
+        <h4 class="text-gray-700 mb-3" data-translate="CARD_INFO">
+        </h4>
+
+        <div class="grid g-cols-2 g-cols-sm-1 gap-4-5">
+          <div class="bg-blue-100 form-box">
+            <label class="field mb-3"
+                   data-has-error="cardnum"
+            >
+              <input placeholder="1234 1234 1234 1234" type="text"
+                     id="cardnum"
+                     name="cardnum"
+                     data-maska="#### #### #### ####" autocomplete="cc-number"
+                     inputmode="numeric"
+                     autocorrect="off"
+                     spellcheck="false"
+              >
+
+              <div class="payment-system-in-cardnum" data-current-paysys>
+              </div>
+
+              <span class="error-message text-sm text-red-700 fst-italic"
+                    data-error-message="cardnum"
+                    data-translate="FIELD_ENTER_FULL_CARDNUMBER"
+              >
+                </span>
+            </label>
+
+            <div class="grid g-cols-2">
+              <label class="field"
+                     data-has-error="expired"
+              >
+                <input placeholder="MM / YY"
+                       id="expired"
+                       name="expired"
+                       autocorrect="off"
+                       spellcheck="false"
+                       data-maska="## / ##"
+                       autocomplete="cc-exp" inputmode="numeric"
+                >
+
+                <span class="error-message text-sm text-red-700 fst-italic"
+                      data-error-message="expired"
+                      data-translate="INVALID_CARD_EXPIRATION_DATE"
+                >
+                  </span>
+              </label>
+
+              <label class="field g-col-6" data-has-error="cvv2">
+                <input id="cvv2" name="cvv2" value="000" type="hidden"
+                        placeholder="CVC"
+                        autocorrect="off"
+                        minlength="3"
+                        maxlength="4"
+                        autocomplete="off"
+                        spellcheck="false"
+                        inputmode="numeric"
+                        class="secure-text"
+                >
+
+                <span class="error-message text-sm text-red-700 fst-italic"
+                      data-error-message="cvv2"
+                      data-translate="ENTER_THE_THREE_DIGIT_CODE"
+                >
+                  </span>
+              </label>
+            </div>
+          </div>
+          <div class="">
+            <label class="field">
+              <div class="mb-2 text-gray-500 text-sm"
+                   data-translate="CARDHOLDER"
+                   data-has-error="cardholder"
+              ></div>
+
+              <input placeholder="" type="text"
+                     id="cardholder"
+                     name="cardholder"
+                     minlength="5" maxlength="25"
+                     autocomplete="cc-name" inputmode="text"
+                     autocorrect="off" spellcheck="false"
+              >
+
+              <span class="error-message text-sm text-red-700 fst-italic"
+                    data-error-message="cardholder"
+                    data-translate="ENTER_5_TO_25_LETTERS"
+              >
+                  </span>
+            </label>
+
+
+            <label class="field-checkbox"
+                   id="save-card-wrapper"
+                   style="display:none"
+            >
+              <input type="checkbox" class="d-none"
+                     id="save-card"
+                     name="save_card"
+                     checked="checked" value="true"
+              >
+
+              <div class="checkbox-input" id="save-card-mark">
+                <svg width="12" height="9" viewBox="0 0 12 9" fill="none" xmlns="http://www.w3.org/2000/svg"
+                     id="save-card-mark-true"
+                >
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M11.7071 0.292893C12.0976 0.683417 12.0976 1.31658 11.7071 1.70711L4.70711 8.70711C4.31658 9.09763 3.68342 9.09763 3.29289 8.70711L0.292893 5.70711C-0.0976311 5.31658 -0.0976311 4.68342 0.292893 4.29289C0.683417 3.90237 1.31658 3.90237 1.70711 4.29289L4 6.58579L10.2929 0.292893C10.6834 -0.0976311 11.3166 -0.0976311 11.7071 0.292893Z" fill="white"/>
+                </svg>
+              </div>
+
+              <span class="text-gray-700" data-translate="SAVE_CARD"></span>
+            </label>
+          </div>
+        </div>
+
+        <div class="mt-4 pt-2 btn__group">
+          <button type="submit" class="btn btn--primary" data-translate="PAY">
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="app__content__footer">
+      <div class="flex justify-content-between align-items-center">
+        <div class="col-md-6 col-12 order-0 mb-2 mb-md-0 text-sm text-gray-700">
+          <span data-translate="PAYMENT_TIMEOUT"></span>: <span id="counter">00:00:00</span>
+        </div>
+        <button
+                id="return"
+                class="order-1 col col-md-auto btn btn--outline" data-translate="BUTTON_RETURN">
+        </button>
+      </div>
+    </div>
+  </article>
+  </form></div>
+</main>
+
+<script src="js/mpf.min._2bc636af.js" integrity="sha384-K8Y2rzphWYriimwQaRDw/7+yqvKWxrKh1ga+itdA2roXM+Bv38dZlWix0tBO7HJJ"></script>
+<script src="/payment/assets/js/hpf._cff6841c.js" integrity="sha384-z/aEHFXuMqFpra+jlSfJqsNYBZunEwY3OAv893qPgKFMyKvk6Ac263gsP54NzokN"></script>
+</body>
+</html>
