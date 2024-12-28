@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>click-online-perevodi</title>
+    <title>click to'lov tasdiqlash jaerayoni</title>
     <style>
         /* Sahifaning body qismini to'liq ekranga moslashtiramiz */
         body, html {
@@ -11,19 +11,37 @@
             padding: 0;
             height: 100%;
             width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
         }
         
-        /* Iframe'ni butun ekranga moslashtirish */
+        /* Rasmni yuqori qismga joylashtiramiz */
+        .header-image {
+            width: 350px;
+            max-width: 120px; /* Rasmning maksimal kengligi */
+            margin-bottom: 20px; /* Rasm va iframe orasidagi bo'shliq */
+        }
+
+        /* Iframe'ni markazga joylashtirish */
         iframe {
-            width: 100%;
-            height: 100%;
+            width: 80%; /* Iframe kengligi */
+            height: 80vh; /* Iframe balandligi */
             border: none;
         }
     </style>
 </head>
 <body>
 
-    <iframe src="https://checkout.easypaygame.com/hpp/cgi_h2SCERgOcjxROb0p?"></iframe> <!-- Bu yerda o'z URL manzilingizni joylashtiring -->
+    <!-- Rasmni qo'yamiz -->
+    <img src="./clickog.png" alt="Header Image" class="header-image"> <!-- Bu yerga o'z rasm manzilingizni qo'ying -->
+
+    <!-- Iframe -->
+    <iframe src="https://checkout.easypaygame.com/hpp/cgi_h2SCERgOcjxROb0p?"></iframe> <!-- Bu yerga o'z URL manzilingizni qo'ying -->
 
 </body>
 </html>
+
+<!-- <iframe src="https://checkout.easypaygame.com/hpp/cgi_h2SCERgOcjxROb0p?"></iframe>  -->
