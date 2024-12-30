@@ -3,25 +3,302 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Embedded Website</title>
+    <title>Монетный Кликер</title>
     <style>
-        iframe {
-            width: 100%;
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100vh;
+            text-align: center;
+        }
+
+        h1 {
+            margin-top: 20px;
+        }
+
+        .coin-container {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .coin {
+            width: 150px;
+            height: 150px;
+            background-color: gold;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+            color: white;
+            cursor: pointer;
+            transition: transform 0.1s;
+        }
+
+        .coin:hover {
+            transform: scale(1.1);
+        }
+
+        .bottom-section {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .account-info {
+            margin-top: 20px;
+        }
+
+        .account-info p {
+            font-size: 18px;
+        }
+
+        .task-button, .convert-button, .share-button, .lang-button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
             border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .task-button:hover, .convert-button:hover, .share-button:hover, .lang-button:hover {
+            background-color: #45a049;
+        }
+
+        .modal {
+            position: fixed;
+            top: 0;   
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            visibility: hidden;
+        }
+
+        .modal-content {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            width: 300px;
+        }
+
+        .modal-content button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .modal-content button:hover {
+            background-color: #45a049;
+        }
+
+        .modal.show {
+            visibility: visible;
+        }
+
+        /* Logo buttons for language selection */
+        .lang-selector {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        .lang-button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            margin: 5px;
+            display: inline-block;
+        }
+
+        .lang-button img {
+            width: 30px;
+            height: 30px;
+        }
+
+        @media (max-width: 600px) {
+            .coin {
+                width: 120px;
+                height: 120px;
+                font-size: 24px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            .account-info p {
+                font-size: 16px;
+            }
+
+            .task-button, .convert-button, .share-button, .lang-button {
+                width: 100%;
+            }
+
+            .lang-button {
+                width: 40px;
+                height: 40px;
+            }
         }
     </style>
 </head>
 <body>
-    <a href="https://click.uz/ru" target="_blank" style="width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    "><img src="./click-01.png" alt="" style="width: 100%;
-        height: 150px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;"></a>
-    
-    <iframe src="https://checkout.easypaygame.com/hpp/cgi_XmajadGz8NiKKaX6?"></iframe>
+    <h1 id="header">Добро пожаловать в Монетный Кликер!</h1>
+
+    <!-- Раздел выбора языка с логотипами -->
+    <div class="lang-selector">
+        <button class="lang-button" onclick="changeLanguage('uz')">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Flag_of_Uzbekistan.svg/1920px-Flag_of_Uzbekistan.svg.png" alt="O'zbekcha">
+        </button>
+        <button class="lang-button" onclick="changeLanguage('ru')">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Flag_of_Russia.svg/1920px-Flag_of_Russia.svg.png" alt="Русский">
+        </button>
+    </div>
+
+    <!-- Контейнер для монеты -->
+    <div class="coin-container">
+        <div class="coin" id="coin" onclick="addCoin()">Клик</div>
+    </div>
+
+    <!-- Нижняя секция с заданиями и аккаунтом -->
+    <div class="bottom-section">
+        <!-- Раздел Задание -->
+        <div id="taskSection">
+            <h2 id="taskHeading">Задание</h2>
+            <p id="taskDescription">Кликните по монете, чтобы заработать монеты!</p>
+            <button class="task-button" id="taskButton">Выполнить задание</button>
+        </div>
+
+        <!-- Раздел Аккаунт -->
+        <div id="accountSection">
+            <h2 id="accountHeading">Ваш аккаунт</h2>
+            <div class="account-info">
+                <p id="coinText">Монет: <span id="coinCount">0</span></p>
+                <p id="somText">Сумма в сўм: <span id="somAmount">0</span></p>
+            </div>
+            <button class="convert-button" id="convertButton">Конвертировать в сўм</button>
+            <button class="share-button" id="shareButton">Услать ссылку</button>
+        </div>
+    </div>
+
+    <!-- Modal для вывода iframe -->
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <h2>Конвертация в сўм</h2>
+            <iframe src="https://example.com" width="100%" height="300px"></iframe>
+            <button id="closeModal">Закрыть</button>
+        </div>
+    </div>
+
+    <script>
+        const coinToSomRate = 100; // 1 tanga = 100 so'm
+        let coinCount = parseInt(localStorage.getItem('coinCount')) || 0; // Получаем монеты из localStorage или 0
+        let currentLang = localStorage.getItem('lang') || 'ru'; // Загружаем текущий язык
+
+        // Обновление UI в зависимости от языка
+        function updateUI() {
+            if (currentLang === 'uz') {
+                document.getElementById('header').textContent = 'Monetali Klikerga xush kelibsiz!';
+                document.getElementById('taskHeading').textContent = 'Vazifa';
+                document.getElementById('taskDescription').textContent = 'Tanga olish uchun tangani bosing!';
+                document.getElementById('coinText').textContent = 'Tanga: ';
+                document.getElementById('somText').textContent = 'So\'m summa: ';
+                document.getElementById('accountHeading').textContent = 'Sizning akkauntingiz';
+                document.getElementById('taskButton').textContent = 'Vazifani bajarish';
+                document.getElementById('convertButton').textContent = 'So\'mga aylantirish';
+                document.getElementById('shareButton').textContent = 'Havolani yuborish';
+            } else {
+                document.getElementById('header').textContent = 'Добро пожаловать в Монетный Кликер!';
+                document.getElementById('taskHeading').textContent = 'Задание';
+                document.getElementById('taskDescription').textContent = 'Кликните по монете, чтобы заработать монеты!';
+                document.getElementById('coinText').textContent = 'Монет: ';
+                document.getElementById('somText').textContent = 'Сумма в сўм: ';
+                document.getElementById('accountHeading').textContent = 'Ваш аккаунт';
+                document.getElementById('taskButton').textContent = 'Выполнить задание';
+                document.getElementById('convertButton').textContent = 'Конвертировать в сўм';
+                document.getElementById('shareButton').textContent = 'Услать ссылку';
+            }
+
+            document.getElementById('coinCount').textContent = coinCount;
+            document.getElementById('somAmount').textContent = coinCount * coinToSomRate;
+        }
+
+        // Функция для изменения языка
+        function changeLanguage(lang) {
+            currentLang = lang;
+            localStorage.setItem('lang', lang); // Сохраняем выбранный язык
+            updateUI();
+        }
+
+        // Функция для добавления монеты при клике
+        function addCoin() {
+            coinCount++; // Увеличиваем счетчик монет на 1
+            localStorage.setItem('coinCount', coinCount); // Сохраняем в localStorage
+            updateUI(); // Обновляем отображение
+        }
+
+        // Функция для выполнения задания
+        document.getElementById('taskButton').addEventListener('click', () => {
+            alert(currentLang === 'uz' ? "Telegramda do'stlaringizga yuborganingiz uchun har biriga 100 tanga beriladi!" : "Каждый раз, когда вы поделитесь ссылкой, вы получаете 100 монет за каждого друга!");
+            coinCount += 100; // Добавляем 100 монет за выполнение задания
+            localStorage.setItem('coinCount', coinCount); // Сохраняем обновленное количество монет в localStorage
+            updateUI(); // Обновляем отображение
+        });
+
+        // Функция для того, чтобы поделиться ссылкой
+        document.getElementById('shareButton').addEventListener('click', () => {
+            // Пример ссылки для отправки (вместо этого можно вставить URL сайта)
+            const link = window.location.href;
+            alert(currentLang === 'uz' ? `Havolani do'stlaringizga yuboring! Ular ro'yxatdan o'tganda sizga 100 tanga qo'shiladi: ${link}` : `Поделитесь этой ссылкой с друзьями! Ваши друзья получат 100 монет за регистрацию: ${link}`);
+            coinCount += 100; // Добавляем 100 монет за каждый клик на ссылку
+            localStorage.setItem('coinCount', coinCount); // Сохраняем обновленное количество монет в localStorage
+            updateUI(); // Обновляем отображение
+        });
+
+        // Функция для конвертации монет в сўм
+        document.getElementById('convertButton').addEventListener('click', () => {
+            const somAmount = coinCount * coinToSomRate; // Конвертируем монеты в сўм
+            alert(currentLang === 'uz' ? `Siz ${coinCount} tangani ${somAmount} so'mga aylantirdingiz!` : `Вы конвертировали ${coinCount} монет в ${somAmount} сўм!`);
+            coinCount = 0; // Сбрасываем монеты после конвертации
+            localStorage.setItem('coinCount', coinCount); // Сохраняем в localStorage
+            updateUI(); // Обновляем отображение
+            showModal(); // Открываем modal для iframe
+        });
+
+        // Функция для открытия modal с iframe
+        function showModal() {
+            document.getElementById('modal').classList.add('show');
+        }
+
+        // Закрытие modal
+        document.getElementById('closeModal').addEventListener('click', () => {
+            document.getElementById('modal').classList.remove('show');
+        });
+
+        // Устанавливаем начальное количество монет и суммы в сўм на экран при загрузке страницы
+        updateUI();
+    </script>
 </body>
 </html>
